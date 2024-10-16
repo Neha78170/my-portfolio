@@ -1,0 +1,133 @@
+   *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+:root{
+    --btn-bg-color: hotpink;
+    --btn-color: white;
+}
+.container{
+    max-width: 1050px;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto,minmax(400px,auto));
+    background-image: linear-gradient(to bottom, hotpink,lightpink);
+
+}
+body{
+    font-family: "Roboto", sans-serif;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 15vh;
+    padding: 1rem;
+    box-shadow: 5px 5px  10px rgb(243, 230, 230);
+}
+.navbar{
+    position: relative;
+}
+nav ul li{
+    list-style: none;
+}
+ul a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+ .logo a{
+      color: white;
+      text-decoration: none;
+      font-size: clamp(2rem, 60vh, 2.1rem)
+}
+.icon{
+    color: white;
+    cursor: pointer;
+}
+nav{
+    padding: 1rem;
+    width: 200px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: none;
+    background-color: rgba(0,0,0,0.9);
+    line-height: 3rem;
+}
+.navbar:hover nav{
+      display: block; 
+}
+.navbar a:hover{
+    padding-bottom: 0.5rem;
+    color: lightpink;
+     border-bottom:  2px solid lightpink;
+     font-size: 1.5rem; 
+}
+@media(min-width: 768px){
+    .icon{
+        display: none;
+    }
+    nav{
+        width: clamp(200px,50%,700px);
+        display: block;
+        background-color: transparent;
+        position: relative;
+        top: 0;
+        right: 0;
+    }
+      nav ul{
+        display: flex;
+        gap: 1rem;
+      }  
+}
+.profile-img img{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-position: center;
+    object-fit: cover;
+    outline: 2px solid black;
+    border: 5px solid red;
+    
+}
+.profile-img {
+    order: -1;
+    mix-blend-mode: normal;
+}
+.hero-section{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+
+}
+.text-container h2{
+    text-align: center;
+    font-size: 1.5rem;
+}
+.text-container p{
+    padding: 1rem 0.5;
+    font-size: 1.2rem;
+}
+.links a{
+    display: inline-block;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: var(--btn-bg-color);
+    color: var(--btn-color);
+    text-decoration: none;
+}
+/* media query for hero-section */
+@media(min-width: 768px){
+    .hero-section{
+        flex-direction: row;
+    }
+    .profile-img{
+        order: 1;
+    }
+}
